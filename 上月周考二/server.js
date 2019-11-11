@@ -1,7 +1,18 @@
 const http = require("http")
 const fs = require("fs")
+
+let text = {
+    "/json": "json",
+    "/txt": "txt",
+    "/jpg": "jpg"
+}
+
+
 const server = http.createServer((req, res) => {
-    res.writeHead(200, {"Content-Type":"/json"})
+    res.writeHead(200, { "Content-Type": "/json" })
+    if (req.url !== "/") {
+        console.log("====")
+    }
     if (req.url == "/json") {
         res.end(JSON.stringify([{ "code": 1, "list": [{ title: "ss" }] }]))
     } else if (req.url == "/txt") {
