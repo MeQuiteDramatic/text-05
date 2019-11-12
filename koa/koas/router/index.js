@@ -44,8 +44,16 @@ router.post("/api/update", async (ctx, next) => {
 })
 
 
-router.get("/api/list",async (ctx, next) => {
-  let data=  await query("select * from ykfx") 
+router.get("/api/list", async (ctx, next) => {
+    let { limit, count } = ctx.query
+        let data = ""
+
+
+    if (limit || limit == 0 && count) {
+        data = await query(`select * from ykfx limit ${limit},${count}`)
+    } else {
+        data = await query("select * from ykfx")
+    }
     ctx.body = {
         code: 1,
         data: data
