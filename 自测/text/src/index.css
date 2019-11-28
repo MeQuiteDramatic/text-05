@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+html,body,#root,.body{
+    width: 100%;
+    height: 100%;
+}
+.ipt{
+    width: 210px;
+}
+.ipt_div{
+    background: #ececec;
+    width: 270px;
+    margin: 50px 400px;
+    padding: 30px;
+}
+
+.header{
+    background: #fff;
+    text-align: center;
+}
+.left{
+    width: 320px;
+}
+
+a{
+    color: #fff;
+    display: inline-block;
+    width: 87%;
+}
